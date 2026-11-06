@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#cce8df" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f8f6df'/%3E%3Cpath d='M32 50C8 36 16 15 32 25 48 15 56 36 32 50Zm0 0V29' fill='%236c9a70' stroke='%236c9a70' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <title>상안동 산책 — 작은 동네의 오후</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <div id="world" aria-label="상안동 3D 산책 게임"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-icon">☘</div><div><strong>상안동 산책</strong><span>울산 북구 · 작은 동네의 오후</span></div></div>
+      <div class="weather"><span class="sun">☀</span><div><b>포근한 오후</b><small>바람이 살랑살랑</small></div></div>
+    </header>
+    <section class="mission-card" aria-live="polite">
+      <div class="mission-kicker"><span class="pulse"></span>오늘의 느긋한 산책</div>
+      <h1 id="mission-title">동네의 작은 빛을<br>모아볼까요?</h1>
+      <p id="mission-desc">반짝이는 민들레 씨앗 5개를 찾아보세요.<br>서두르지 않아도 괜찮아요.</p>
+      <div class="progress-row"><div class="progress-track"><i id="progress-fill"></i></div><b id="progress-label">0 <span>/ 5</span></b></div>
+      <div class="place-chip"><span>⌖</span><span id="location-label">상안마을 입구</span></div>
+    </section>
+    <div class="map-card"><div class="map-title"><span>산책 지도</span><span class="map-live">● 지금 여기</span></div><div class="mini-map" id="mini-map"><div class="map-river"></div><div class="map-road road-a"></div><div class="map-road road-b"></div><span class="map-pin pin-park">🌳</span><span class="map-pin pin-school">🏫</span><span class="map-pin pin-market">🏪</span><span class="player-dot" id="player-dot"></span><span class="map-label label-park">상안공원</span><span class="map-label label-school">상안초</span><span class="map-label label-market">마을상점</span></div></div>
+    <div class="hint-pill" id="hint-pill"><span>✦</span> 천천히 걸으며 주변을 둘러보세요</div>
+    <div class="toast" id="toast"></div>
+    <div class="controls-help"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>이동</span><kbd>Shift</kbd><span>천천히</span><button id="sound-toggle" aria-label="소리 켜기">♫</button></div>
+    <div class="touch-controls" aria-label="이동 조작"><div class="joystick" id="joystick"><div class="joy-knob" id="joy-knob"></div></div><button class="look-button" id="look-button" aria-label="둘러보기"><span>◉</span><small>둘러보기</small></button></div>
+    <div class="collection-toast" id="collection-toast"><span>✦</span><div><b>작은 빛을 찾았어요</b><small>마음에 담아두기</small></div></div>
+    <div class="start-overlay" id="start-overlay"><div class="start-card"><div class="start-art"><span class="art-sun">☀</span><span class="art-hill hill-one"></span><span class="art-hill hill-two"></span><span class="art-house">⌂</span><span class="art-flower">✿</span></div><p class="eyebrow">A LITTLE WALK IN ULSAN</p><h2>익숙한 동네를<br>새로운 속도로</h2><p class="start-copy">울산 북구 상안동에서 영감을 받은<br>작은 산책길에 오신 걸 환영해요.</p><button id="start-button">산책 시작하기 <span>→</span></button><small>화면을 드래그하거나 방향키로 걸어보세요</small></div></div>
+    <div class="complete-overlay hidden" id="complete-overlay"><div class="complete-card"><div class="complete-sparkle">✿</div><p class="eyebrow">A QUIET MOMENT</p><h2>오늘 산책,<br>참 잘했어요.</h2><p>동네에 숨은 작은 빛을 모두 찾았어요.<br>잠시 이 풍경을 바라봐도 좋아요.</p><button id="again-button">한 바퀴 더 걷기 <span>↻</span></button></div></div>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
